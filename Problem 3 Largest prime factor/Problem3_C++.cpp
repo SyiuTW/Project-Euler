@@ -12,21 +12,21 @@ int main(){
         long LargestPrime = 2;
         
         while (N % 2 == 0){
-                N /= 2;
+            N /= 2;
+        }
+
+        for(long j = 3; (j * j) <= N; j = j + 2){
+            while (N % j == 0){
+                N /= j;
             }
-            
-            for(long j = 3; (j * j) <= N; j = j + 2){
-                while (N % j == 0){
-                    N /= j;
-                }
-                LargestPrime = j;
-            }
-            
-            if (N > 1){
-                LargestPrime = N;
-            }
-            
-            cout << LargestPrime << endl;
+            LargestPrime = j;
+        }
+
+        if (N > 1){
+            LargestPrime = N;
+        }
+
+        cout << LargestPrime << endl;
     }
     return 0;
 }
